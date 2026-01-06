@@ -5,14 +5,17 @@ CFLAGS := -Wall -Wextra -O2
 CXXFLAGS := -Wall -Wextra -O2
 SOURCES_C := $(wildcard *.c)
 SOURCES_CPP := $(wildcard *.cpp)
-BINS_C := $(SOURCES_C:.c=)
-BINS_CPP := $(SOURCES_CPP:.cpp=)
+BIN_DIR := bin
+BINS_C := $(patsubst %.c,$(BIN_DIR)/%,$(SOURCES_C))
+BINS_CPP := $(patsubst %.cpp,$(BIN_DIR)/%,$(SOURCES_CPP))
 BINS := $(BINS_C) $(BINS_CPP)
-.PHONY: all clean
-all: $(BINS)
-%: %.c
+.PHONY: all clean $(BIN_DIR)
+all: $(BIN_DIR) $(BINS)
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+$(BIN_DIR)/%: %.c | $(BIN_DIR)
 	$(CC) $(CFLAGS) $< -o $@
-%: %.cpp
+$(BIN_DIR)/%: %.cpp | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 clean:
-	rm -f $(BINS)
+	rm -rf $(BIN_DIR)

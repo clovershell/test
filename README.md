@@ -25,4 +25,4 @@
 
 **构建与运行**
 - 自动编译：`make` 或并行 `make -j`
-- 单个可执行为源文件同名，例如：`./test_container_of`、`./test_Generic`、`./test_0_array`
+- 可执行文件输出到 `bin/` 目录，例如：`./bin/test_container_of`、`./bin/test_Generic`、`./bin/test_0_array`

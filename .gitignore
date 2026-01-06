@@ -1,0 +1,52 @@
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Static libraries
+*.a
+*.la
+*.lo
+*.lib
+
+# Shared/Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Executables and outputs
+*.exe
+*.out
+
+# Debug/Profiling
+*.dSYM/
+*.stackdump
+core
+vgcore.*
+
+# Build directories
+build/
+bin/
+debug/
+release/
+cmake-build-*/
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+
+# OS/Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+
+# CCache
+ccache/
+

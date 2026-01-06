@@ -1,3 +1,6 @@
+
+> https://www.zhihu.com/question/2465365722
+
 # 模块测试功能概览
 
 **test_container_of.c（指针反推 + 双向链表）**
@@ -22,6 +25,12 @@
 - 动态分配`sizeof(struct Packet)+N`（`test_0_array.c:22`）
 - 写入数据、读取打印、计算实际占用大小（`test_0_array.c:24-30`）
 - 释放内存（`test_0_array.c:31-32`）
+
+**test_X_Macro.c（X-Macro 宏定义技巧）**
+- 颜色枚举与字符串转换：`enum COLOR`与`ColorToString`（`test_X_Macro.c:14-44`）
+- 测试点：
+- 枚举值到字符串的转换（`test_X_Macro.c:46-50`）
+- 遍历所有枚举值并打印字符串（`test_X_Macro.c:52-56`）
 
 **构建与运行**
 - 自动编译：`make` 或并行 `make -j`
